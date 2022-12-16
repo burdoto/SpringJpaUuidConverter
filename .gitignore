@@ -26,7 +26,5 @@ gradle-app.setting
 !gradle/wrapper/gradle-wrapper.jar
 !gradle/wrapper/gradle-wrapper.properties
 
-## ignore all directories; they are projects
-**/
 ## except idea dir; those ignores are coming
 !.idea/**
