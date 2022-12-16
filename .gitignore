@@ -1,0 +1,32 @@
+.idea/
+
+### Gradle ###
+.gradle
+build/
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# Cache of project
+.gradletasknamecache
+
+# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+# gradle/wrapper/gradle-wrapper.properties
+
+### Gradle Patch ###
+**/build/
+
+# End of https://www.toptal.com/developers/gitignore/api/gradle,intellij
+
+## Dont ignore specific stuff
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+## ignore all directories; they are projects
+**/
+## except idea dir; those ignores are coming
+!.idea/**
