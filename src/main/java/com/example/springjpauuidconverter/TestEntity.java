@@ -37,6 +37,15 @@ public class TestEntity {
     public TestEntity() {
     }
 
+    @Override
+    public String toString() {
+        return "TestEntity{" +
+                "id=" + id +
+                ", id2=" + id2 +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
     public TestEntity(UUID id, UUID id2, String name) {
         this.id = id;
         this.id2 = id2;

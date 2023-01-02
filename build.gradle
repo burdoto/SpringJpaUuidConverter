@@ -18,6 +18,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    // https://mvnrepository.com/artifact/com.h2database/h2
+    implementation 'com.h2database:h2:2.1.214'
 }
 
 tasks.named('test') {

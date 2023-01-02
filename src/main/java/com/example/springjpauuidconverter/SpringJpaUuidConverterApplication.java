@@ -24,16 +24,12 @@ public class SpringJpaUuidConverterApplication {
 
     @Bean
     public DataSource dataSource() throws IOException {
-        try (
-                FileInputStream fis = new FileInputStream("/srv/testdb.json")
-        ) {
-            var dbInfo = new ObjectMapper().readValue(fis, DBInfo.class);
-            return DataSourceBuilder.create()
-                    .url(dbInfo.url)
-                    .username(dbInfo.username)
-                    .password(dbInfo.password)
-                    .build();
-        }
+        return DataSourceBuilder.create()
+                .driverClassName("org.h2.Driver")
+                .url("jdbc:h2:mem:testDB;DB_CLOSE_DELAY=-1")
+                .username("sa")
+                .password("sa")
+                .build();
     }
 
     private static class DBInfo {
