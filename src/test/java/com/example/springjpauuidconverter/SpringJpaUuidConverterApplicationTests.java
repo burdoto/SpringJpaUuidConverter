@@ -34,5 +34,11 @@ class SpringJpaUuidConverterApplicationTests {
 
         Assert.isTrue(byId.isPresent(), "Not found by primary ID");
         Assert.isTrue(byAltId.isPresent(), "Not found by secondary ID");
+
+        System.out.println("modify name:");
+        repo.setName(id1, "beanie");
+
+        System.out.println("after modify:");
+        System.out.println("repo.findById(id1) = " + repo.findById(id1));
     }
 }
