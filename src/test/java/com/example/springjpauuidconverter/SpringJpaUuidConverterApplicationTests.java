@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.Assert;
 
+import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -39,6 +40,8 @@ class SpringJpaUuidConverterApplicationTests {
         repo.setName(id1, "beanie");
 
         System.out.println("after modify:");
-        System.out.println("repo.findById(id1) = " + repo.findById(id1));
+        Optional<TestEntity> byIdRenamed = repo.findById(id1);
+        System.out.println("repo.findById(id1) = " + byIdRenamed);
+        Assert.isTrue(Objects.equals(byIdRenamed.map(TestEntity::getName).orElse(null), "beanie"), "Name was not changed");
     }
 }
