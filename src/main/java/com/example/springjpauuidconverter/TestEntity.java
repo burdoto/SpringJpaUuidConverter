@@ -1,5 +1,6 @@
 package com.example.springjpauuidconverter;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -18,14 +19,17 @@ public class TestEntity {
     @Column
     public String name;
 
+    @JsonProperty
     public UUID getId() {
         return id;
     }
 
+    @JsonProperty
     public UUID getId2() {
         return id2;
     }
 
+    @JsonProperty
     public String getName() {
         return name;
     }

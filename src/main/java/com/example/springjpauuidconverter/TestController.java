@@ -1,6 +1,7 @@
 package com.example.springjpauuidconverter;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,11 +23,13 @@ public class TestController {
 
     @GetMapping("/get1/{id}")
     public Optional<TestEntity> getById1(@PathVariable("id") UUID id) {
-        return repo.findById(id);
+        Optional<TestEntity> byId = repo.findById(id);
+        return byId;
     }
 
-    @GetMapping("/get2/{id}")
-    public Optional<TestEntity> getById2(@PathVariable("id") UUID id) {
-        return repo.findByAltId(id);
+    @GetMapping(value = "/get2/{id}", produces = {"application/json"})
+    public TestEntity getById2(@PathVariable("id") UUID id) {
+        Optional<TestEntity> byAltId = repo.findByAltId(id);
+        return byAltId.get();
     }
 }
