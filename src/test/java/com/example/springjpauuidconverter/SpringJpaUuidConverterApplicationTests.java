@@ -25,9 +25,10 @@ class SpringJpaUuidConverterApplicationTests {
             System.out.println("entity = " + entity);
         }
 
-        System.out.println("By ID:");
+        System.out.println("By ID " + id1);
         Optional<TestEntity> byId = repo.findById(id1);
         System.out.println("repo.findById(id1) = " + byId);
+        System.out.println("By Alt ID " + id2);
         Optional<TestEntity> byAltId = repo.findByAltId(id2);
         System.out.println("repo.findByAltId(id2) = " + byAltId);
 
