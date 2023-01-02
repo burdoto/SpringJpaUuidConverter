@@ -33,9 +33,9 @@ public class TestEntity {
     public TestEntity() {
     }
 
-    public TestEntity(String name) {
-        this.id = UUID.randomUUID();
-        this.id2 = UUID.randomUUID();
+    public TestEntity(UUID id, UUID id2, String name) {
+        this.id = id;
+        this.id2 = id2;
         this.name = name;
     }
 }
